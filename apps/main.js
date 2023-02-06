@@ -35,6 +35,13 @@ class ParkingLot {
     this.cars.splice(this.cars.indexOf(car), 1)
     console.log(`Slot number ${slot} is free`)
   }
+
+  status() {
+    console.log('Slot No.\tRegistration \t\tNo Colour')
+    this.cars.forEach((car) => {
+      console.log(`${car.slot}\t\t${car.registrationNumber}\t\t${car.color}`)
+    })
+  }
 }
 
 const parkingLot = new ParkingLot(6)
@@ -46,4 +53,4 @@ parkingLot.park(new Car('KA-01-HH-7777', 'Red'))
 parkingLot.park(new Car('KA-01-HH-2701', 'Blue'))
 parkingLot.park(new Car('KA-01-HH-3141', 'Black'))
 parkingLot.leave(4)
-console.log('parkingLot: ', parkingLot)
+parkingLot.status()
