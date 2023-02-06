@@ -12,7 +12,8 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 # - if java
 #   java -cp $DIR/../target/ParkingLot-1.0-SNAPSHOT.jar com.gojek.Main $1
 # - if python
-   python3 "$DIR"/../apps/main.py "$1"
+   # python3 "$DIR"/../apps/main.py "$1"
+   node "$DIR"/../apps/main.js "$1"
 # - if ruby
 #   ruby $DIR/../main.rb $1
 #
