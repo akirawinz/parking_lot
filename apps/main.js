@@ -57,7 +57,10 @@ class ParkingLot {
 
   getSlotNumberForRegistrationNumber(registrationNumber) {
     const car = this.cars.find((car) => car.registrationNumber === registrationNumber)
-
+    if (!car) {
+      console.log('Not found')
+      return
+    }
     console.log(car.slot)
   }
 }
@@ -78,3 +81,5 @@ parkingLot.getSlotNumbersForCarsWithColor('White')
 parkingLot.getRegistrationNumbersForCarsWithColor('White')
 
 parkingLot.getSlotNumberForRegistrationNumber('KA-01-HH-3141')
+
+parkingLot.getSlotNumberForRegistrationNumber('MH-04-AY-1111')
