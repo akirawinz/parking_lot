@@ -42,6 +42,12 @@ class ParkingLot {
       console.log(`${car.slot}\t\t${car.registrationNumber}\t\t${car.color}`)
     })
   }
+
+  getSlotNumbersForCarsWithColor(color) {
+    const cars = this.cars.filter((car) => car.color === color)
+    const slotNumbers = cars.map((car) => car.slot)
+    console.log(slotNumbers.join(', '))
+  }
 }
 
 const parkingLot = new ParkingLot(6)
@@ -54,3 +60,6 @@ parkingLot.park(new Car('KA-01-HH-2701', 'Blue'))
 parkingLot.park(new Car('KA-01-HH-3141', 'Black'))
 parkingLot.leave(4)
 parkingLot.status()
+parkingLot.park(new Car('KA-01-P-333', 'White'))
+parkingLot.park(new Car('DL-12-AA-9999', 'White'))
+parkingLot.getSlotNumbersForCarsWithColor('White')
