@@ -24,6 +24,17 @@ class ParkingLot {
     }
     console.log('Sorry, parking lot is full')
   }
+
+  leave(slot) {
+    if (this.slots[slot - 1] === null) {
+      console.log('This slot is already empty')
+      return
+    }
+    const car = this.slots[slot - 1]
+    this.slots[slot - 1] = null
+    this.cars.splice(this.cars.indexOf(car), 1)
+    console.log(`Slot number ${slot} is free`)
+  }
 }
 
 const parkingLot = new ParkingLot(6)
@@ -34,4 +45,5 @@ parkingLot.park(new Car('KA-01-BB-0001', 'Black'))
 parkingLot.park(new Car('KA-01-HH-7777', 'Red'))
 parkingLot.park(new Car('KA-01-HH-2701', 'Blue'))
 parkingLot.park(new Car('KA-01-HH-3141', 'Black'))
+parkingLot.leave(4)
 console.log('parkingLot: ', parkingLot)
